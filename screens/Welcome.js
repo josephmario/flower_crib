@@ -14,7 +14,7 @@ export const Colors = {
 
 const { primary, secondary, tertiary, darkLight, brand, green, red } = Colors;
 
-export default function Welcome({ google, welcome, title }) {
+export default function Welcome({ google, navigation }) {
   const buttonStyle = google ? [styles.StyleButton, styles.GoogleButton] : styles.StyleButton; // Conditionally applying Google style
 
   return (
@@ -37,7 +37,12 @@ export default function Welcome({ google, welcome, title }) {
         <View style={styles.StyleFormArea}>
           <View style={styles.WelcomeContainer}>
             <View style={styles.Line}></View>
-            <TouchableOpacity style={buttonStyle} onPress={() => {}}>
+            <TouchableOpacity
+              style={buttonStyle}
+              onPress={() => {
+                navigation.navigate('Login');
+              }}
+            >
               <Text style={styles.ButtonText}>Logout</Text>
             </TouchableOpacity>
           </View>
